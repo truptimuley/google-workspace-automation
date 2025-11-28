@@ -50,22 +50,22 @@ The scripts are written to be modular so they can be plugged into any setup.
 
 ## Key Features
 
-### ✔ Replace Tags Dynamically  
+### 1. Replace Tags Dynamically  
 You can store `{TAG_1}`, `{TAG_2}`, etc. inside a Google Doc and Sheets will provide the actual values.
 
-### ✔ Supports Multi-Sheet Input  
+### 2. Supports Multi-Sheet Input  
 Data can come from several input sheets, merged and cleaned programmatically.
 
-### ✔ Bulk Document Generation  
+### 3. Bulk Document Generation  
 Run once → generate 10, 50, or 200 documents.
 
-### ✔ Add Images Inside Docs  
+### 4. Add Images Inside Docs  
 Insert Drive images into placeholders, with custom width/height.
 
-### ✔ Clean Up Empty Rows  
+### 5. Clean Up Empty Rows  
 Automatically delete rows in tables that are entirely blank.
 
-### ✔ Consistent Formatting  
+### 6. Consistent Formatting  
 No more manual bolding, alignment fixes, or broken layouts.
 
 ---
