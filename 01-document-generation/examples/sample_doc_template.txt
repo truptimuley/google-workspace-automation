@@ -1,0 +1,27 @@
+Document Title: <<TITLE>>
+
+Author: <<AUTHOR>>
+Date: <<DATE>>
+
+Summary:
+<<SUMMARY>>
+
+-- Section A --
+Overview:
+<<SECTION_A_OVERVIEW>>
+
+Table: Key figures
+| Category | Value |
+| <<CAT_1>> | <<VAL_1>> |
+| <<CAT_2>> | <<VAL_2>> |
+| <<CAT_3>> | <<VAL_3>> |
+
+-- Image placeholder --
+<<IMAGE_MAIN>>
+
+-- Section B --
+Notes:
+<<NOTES>>
+
+Footer: Contact: <<CONTACT_EMAIL>>
+

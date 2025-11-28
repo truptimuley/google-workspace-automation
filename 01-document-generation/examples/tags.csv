@@ -1,0 +1,16 @@
+Value,Placeholder
+Acme Corporation,<<TITLE>>
+Rohit Sharma,<<AUTHOR>>
+2025-11-28,<<DATE>>
+Short summary about the report.,<<SUMMARY>>
+Overview text for section A.,<<SECTION_A_OVERVIEW>>
+Category A,<<CAT_1>>
+12345,<<VAL_1>>
+Category B,<<CAT_2>>
+67890,<<VAL_2>>
+Category C,<<CAT_3>>
+10111,<<VAL_3>>
+https://drive.google.com/uc?export=view&id=1a2b3c4d5e,<<IMAGE_MAIN>>
+Notes and additional observations.,<<NOTES>>
+contact@company.org,<<CONTACT_EMAIL>>
+
