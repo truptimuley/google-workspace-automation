@@ -1,0 +1,5 @@
+# sample controlling sheet rows (start at row 6)
+# Columns: (A)unused,(B)unused,(C)URL,(D)SheetName,(E)unused,(F)Range
+https://docs.google.com/spreadsheets/d/1abcDEF...,DataSheet, , , ,A1:B10
+https://docs.google.com/spreadsheets/d/1xyZ123...,Sheet1, , , ,C5:D20
+https://docs.google.com/spreadsheets/d/1zzz999...,Raw, , , ,A:Z
