@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# extract_text.py
+# usage: python extract_text.py input.pdf out.txt
+
+import sys
+from pathlib import Path
+from PyPDF2 import PdfReader
+
+def extract_text(src, out_path):
+    reader = PdfReader(str(src))
+    all_txt = []
+    for p in reader.pages:
+        txt = p.extract_text()
+        if txt:
+            all_txt.append(txt)
+    Path(out_path).write_text("\n\n".join(all_txt), encoding="utf-8")
+    print("Saved text to", out_path)
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python extract_text.py input.pdf out.txt")
+        sys.exit(1)
+    extract_text(Path(sys.argv[1]), sys.argv[2])
