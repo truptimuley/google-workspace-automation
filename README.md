@@ -76,13 +76,6 @@ Files: `search_panel.gs`, `SearchPanel.html`, `README.md`
 
 ---
 
-## License & contribution
-
-* You can add a LICENSE file (MIT recommended) if you want to make this public.
-* Issues and PRs are welcome. Keep changes small and include a short test or example.
-
----
-
 ## Final notes
 
 * All scripts are intentionally small and modular so you can copy only what you need.
