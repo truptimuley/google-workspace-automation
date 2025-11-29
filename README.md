@@ -1,109 +1,93 @@
-# Google Workspace Automation Suite
+#Google Workspace Automation
+### Automated Data Pipelines for High-Velocity Field Operations
 
-A collection of small, practical scripts and tools designed to make Google Sheets, Google Docs, and Google Drive easier to work with.  
-Each tool comes from a real workflow problem - something repetitive, slow, or not possible through the normal UI - and is solved using Google Apps Script (and in a few cases, Python).
+![Status](https://img.shields.io/badge/Status-Active-blue)
+![Stack](https://img.shields.io/badge/Stack-Google_Apps_Script_%7C_Python_%7C_GCP-blue)
+![Focus](https://img.shields.io/badge/Focus-Operational_Efficiency-blue)
 
-Each folder contains:
-- the problem  
-- the solution  
-- the code  
-- simple instructions
+A collection of **Google Apps Script** and **Python** automations used to streamline workflows across Google Workspace — including Drive, Sheets, Docs, and custom reporting utilities.
 
-The goal is to keep every module independent and reusable.
+I built these utilities to replace manual workflows with automated triggers. The goal was simple: stop copy-pasting data and start processing files in batches. The scripts are now live here as a set of **reusable utilities** that anyone can use or adapt.
 
----
+> **Note:** All folder IDs, URLs and product names in the examples have been replaced with placeholders.
 
-## Index of Tools
 
-### 01 — Document Generation From Sheets  
-Generate multi-page Google Docs from spreadsheet data, update placeholders, handle formatting, and automate entire document pipelines.  
-Folder: `01-document-generation`
+## Repo layout
+```
+.
+├── 01-document-generation
+├── 02-pdf-generation-and-merging
+├── 03-python-pdf-utils
+├── 04-image-handling
+├── 05-metabase-sync
+├── 06-richtext-blocks
+├── 07-dynamic-importrange
+├── 08-drive-utilities
+├── 09-search-panel
+└── README.md
 
----
+````
 
-### 02 — PDF Conversion and Merging  
-Convert Google Docs to PDF at scale and merge PDFs safely using a local Python script (no third-party online tools).  
-Folder: `02-pdf-merging`
-
----
-
-### 03 — Rich Text Block Builder for Sheets  
-Create styled text blocks inside Google Sheets (numbered items, bold titles, multi-line descriptions).  
-Folder: `03-richtext-block-builder`
-
----
-
-### 04 — Sheet-to-Doc Pipelines  
-Automate generating many documents from multiple input sheets, including placeholder replacement and cleaning.  
-Folder: `04-sheet-to-doc-pipelines`
+Below are short descriptions and where to start inside each module.
 
 ---
 
-### 05 — Dynamic IMPORTRANGE Tools  
-Automate creation of multiple IMPORTRANGE formulas and control source sheet mapping using a central configuration.  
-Folder: `05-dynamic-import-tools`
+## Modules
+### 01 - Document generation
+Path: `01-document-generation/`  
+Scripts to generate Google Docs from Sheets by replacing placeholders, inserting images, cleaning up tables and formatting. Includes a sample template and example `tags.csv`.  
+Files: `generateDocs.gs`, `placeholderReplacement.gs`, `imageInsertion.gs`, `tableCleanup.gs`, `utilities.gs`  
+
+### 02 - PDF generation & merging
+Path: `02-pdf-generation-and-merging/`  
+Apps Script helpers and a small local merge setup for producing PDFs from Docs/Sheets and merging them. Also includes handling for shortcuts and Drive export helpers.  
+Files include: `pdfExport.gs`, `pdfMerge.gs`, `convertDocs.gs`, `resolveShortcuts.gs`, `utils.gs`  
+
+### 03 - Python PDF utilities
+Path: `03-python-pdf-utils/`  
+Local CLI-style scripts to manipulate PDFs: merge (with page numbers), split, convert pages to images, extract text, compress. These keep sensitive files local (no cloud upload).  
+Files: `merge_with_pagenums.py`, `pdf_to_jpg.py`, `split_pdf.py`, `extract_text.py`, `compress_pdf.sh`, `requirements.txt`  
+
+### 04 - Image handling
+Path: `04-image-handling/`  
+Utilities to extract image URLs/IDs, fetch Drive images, insert images into Sheets cells and Docs, and an examples folder. Useful when team members paste Drive links in varying formats.  
+Files: `image_utils.gs`, `insert_into_sheet.gs`, `insert_into_doc.gs`, `extract_image_urls.gs`, `utils_small.gs`  
+
+### 05 - Metabase → Sheets sync
+Path: `05-metabase-sync/`  
+Apps Script to pull Metabase question results (CSV) directly into sheet tabs named like `(metabase/123)`. Includes token handling and a timed trigger helper.  
+Files: `main_importer.gs`, `metabase_api.gs`, `sheet_parser.gs`, `fill_sheet.gs`, `triggers.gs`, `utils.gs`  
+
+### 06 - Rich text blocks
+Path: `06-richtext-blocks/`  
+Build multi-line, styled RichText cells from rows of tags. Good for generating one-cell summary blocks (bold headings + normal text).  
+Files: `generateRichText.gs`, `buildRichText.gs`, `ui.gs`, `utils.gs`  
+
+### 07 - Dynamic IMPORTRANGE manager
+Path: `07-dynamic-importrange/`  
+Create and manage many IMPORTRANGE formulas from a single control sheet. Good for syncing multiple sheets without manual copying.  
+Files: `generateImport.gs`, `dynamicImportrange.gs`, `ui.gs`, `utils.gs`  
+
+### 08 — Drive utilities
+Path: `08-drive-utilities/`  
+Drive maintenance helpers: list folder contents, move/rename files using a control sheet, resolve shortcuts (Advanced Drive Service required), and export folder metadata.  
+Files: `listFiles.gs`, `moveRename.gs`, `shortcutHandler.gs`, `bulkDownload.gs`, `utils.gs`  
+
+### 09 — Search Panel (sidebar)
+Path: `09-search-panel/`  
+A small HTML+Apps Script sidebar that shows a searchable list, supports Hindi IME, and pastes the selected value into the active cell. Good for fast lookups.  
+Files: `search_panel.gs`, `SearchPanel.html`, `README.md`  
 
 ---
 
-### 06 — Sidebar Search Panel (Custom UI)  
-A small HTML+JS-powered sidebar for filtering, searching, and selecting values directly inside Google Sheets.  
-Folder: `06-sidebar-ui-tools`
+## License & contribution
+
+* You can add a LICENSE file (MIT recommended) if you want to make this public.
+* Issues and PRs are welcome. Keep changes small and include a short test or example.
 
 ---
 
-### 07 — Row/Column Merge and Cleanup Utilities  
-Unmerge cells, propagate formulas, merge duplicate groups, and hide unused rows for maintaining clean layouts.  
-Folder: `07-merge-rows-columns`
+## Final notes
 
----
-
-### 08 — Image Automation Tools  
-Insert Google Drive images into Sheets or Docs, control size, replace placeholders, and extract usable IDs from URLs.  
-Folder: `08-image-insertion-engine`
-
----
-
-### 09 — Google Drive File Utilities  
-List files in a folder, bulk convert Docs to PDFs, clean shortcuts, and safely handle confidential file workflows.  
-Folder: `09-file-management-utilities`
-
----
-
-### 10 — Workflow Orchestration and Triggers  
-Full multi-step workflows that run end-to-end: set triggers, refresh data, generate outputs, and process batches.  
-Folder: `10-workflow-orchestration`
-
----
-
-## How to Use This Repository
-
-Each module is standalone.  
-You can use any folder without needing the rest.
-
-Most scripts are written for:
-- Google Apps Script  
-- Google Sheets  
-- Google Docs  
-- Google Drive  
-
-A few tools use Python for local processing (e.g., PDF merging).
-
----
-
-## Why This Exists
-
-While Google Workspace is powerful, it becomes limiting when the workflow involves:
-- generating multiple documents at once  
-- reusing consistent templates  
-- merging or formatting content  
-- handling large tables  
-- inserting or managing Drive images  
-- batching updates across files  
-
-These tools were created to solve exactly those pain points.
-
-This repository collects all these practical solutions in one structured library.
-
----
-
-If you find any of these useful, feel free to reuse or adapt them.
+* All scripts are intentionally small and modular so you can copy only what you need.
+* Python tools are there for local, offline PDF handling when confidentiality matters.
