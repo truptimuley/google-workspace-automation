@@ -28,10 +28,6 @@ I built these utilities to replace manual workflows with automated triggers. The
 
 ````
 
-Below are short descriptions and where to start inside each module.
-
----
-
 ## Modules
 ### 01 - Document generation
 Path: `01-document-generation/`  
